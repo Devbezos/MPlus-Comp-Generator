@@ -42,27 +42,6 @@
   color: #999;
   white-space: nowrap;
 }
-.player-select {
-  flex: 1;
-  background: #0a0a0a;
-  border: 1px solid #2a2a2a;
-  border-radius: 6px;
-  color: #ededed;
-  font-size: 0.9rem;
-  padding: 6px 10px;
-  cursor: pointer;
-  outline: none;
-  transition: border-color 0.15s;
-}
-.player-select:hover,
-.player-select:focus {
-  border-color: #22c55e;
-}
-.player-select:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
 /* ── Constraints ── */
 .constraints {
   display: flex;

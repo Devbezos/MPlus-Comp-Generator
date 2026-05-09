@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { SPECS, CLASS_COLORS, ROLE_COLORS, specLabel, TriState, Spec } from './data/specs';
 import { SpinReel } from './components/SpinReel';
 import { HistoryPanel } from './components/HistoryPanel';
+import { RunawaySelect } from './components/RunawaySelect';
 import { useHistory } from './hooks/useHistory';
 import './App.css';
 
@@ -23,7 +24,15 @@ const EMPTY_LABELS = ['TANK', 'HEAL', 'DPS', 'DPS', 'DPS'] as const;
 // Classes in alphabetical order for the grouped dropdown
 const CLASSES = [...new Set(SPECS.map(s => s.class))].sort();
 
-/** Which slot index the player occupies based on their role */
+// Flat option list grouped by class for RunawaySelect
+const SPEC_OPTIONS = CLASSES.flatMap(cls =>
+  SPECS.filter(s => s.class === cls).map(s => ({
+    value: `${s.spec}|${s.class}`,
+    label: specLabel(s),
+    group: cls,
+  }))
+);
+
 function playerSlotIndex(s: Spec): number {
   if (s.role === 'TANK') return 0;
   if (s.role === 'HEALER') return 1;
@@ -197,25 +206,13 @@ export default function App() {
 
       {/* Player spec picker */}
       <section className="player-section">
-        <label className="player-label" htmlFor="player-select">Playing as</label>
-        <select
-          id="player-select"
-          className="player-select"
+        <label className="player-label">Playing as</label>
+        <RunawaySelect
           value={playerSpec ? `${playerSpec.spec}|${playerSpec.class}` : ''}
-          onChange={e => handleSetPlayer(e.target.value)}
+          options={SPEC_OPTIONS}
+          onChange={handleSetPlayer}
           disabled={!!spin}
-        >
-          <option value="">— None —</option>
-          {CLASSES.map(cls => (
-            <optgroup key={cls} label={cls}>
-              {SPECS.filter(s => s.class === cls).map(s => (
-                <option key={`${s.spec}|${s.class}`} value={`${s.spec}|${s.class}`}>
-                  {specLabel(s)}
-                </option>
-              ))}
-            </optgroup>
-          ))}
-        </select>
+        />
       </section>
 
       {/* Constraint toggles */}
