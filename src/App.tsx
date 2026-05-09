@@ -195,11 +195,6 @@ export default function App() {
         <SpinReel pool={spin.pool} winner={spin.winner} onDone={handleSpinDone} />
       )}
 
-      <header className="app-header">
-        <h1 className="app-title">Key Vibes</h1>
-        <p className="app-subtitle">M+ Party Generator</p>
-      </header>
-
       {/* Player spec picker */}
       <section className="player-section">
         <label className="player-label" htmlFor="player-select">Playing as</label>

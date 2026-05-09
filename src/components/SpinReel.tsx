@@ -66,19 +66,19 @@ function drawWheel(canvas: HTMLCanvasElement, pool: Spec[]) {
     ctx.restore();
   });
 
-  // Green outer ring
+  // outer ring
   ctx.beginPath();
   ctx.arc(cx, cy, r, 0, 2 * Math.PI);
-  ctx.strokeStyle = '#818cf8';
-  ctx.lineWidth = 3;
+  ctx.strokeStyle = '#22c55e';
+  ctx.lineWidth = 2;
   ctx.stroke();
 
   // Center hub
   ctx.beginPath();
   ctx.arc(cx, cy, 18, 0, 2 * Math.PI);
-  ctx.fillStyle = '#0c0c0e';
+  ctx.fillStyle = '#0a0a0a';
   ctx.fill();
-  ctx.strokeStyle = '#818cf8';
+  ctx.strokeStyle = '#22c55e';
   ctx.lineWidth = 2;
   ctx.stroke();
 }
