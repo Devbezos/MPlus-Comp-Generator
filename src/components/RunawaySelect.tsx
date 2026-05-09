@@ -96,9 +96,9 @@ export function RunawaySelect({ value, options, onChange, disabled, placeholder 
                 return (
                   <div
                     key={opt.value}
-                    className={`rs-option${value === opt.value ? ' rs-option--active' : ''}${runaway ? ' rs-option--forbidden' : ''}`}
+                    className={`rs-option${value === opt.value ? ' rs-option--active' : ''}`}
                     onMouseEnter={runaway ? flee : undefined}
-                    onMouseDown={runaway ? undefined : () => { onChange(opt.value); setOpen(false); }}
+                    onMouseDown={() => { onChange(opt.value); setOpen(false); }}
                   >
                     {opt.label}
                   </div>
