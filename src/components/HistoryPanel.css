@@ -1,19 +1,18 @@
 .hist {
-  border: 1px solid #0f2e14;
+  border: 1px solid #1e1e22;
   border-radius: 8px;
   overflow: hidden;
-  background: #060e07;
+  background: #131315;
 }
 
 .hist-toggle {
   width: 100%;
   background: none;
   border: none;
-  color: #2a5c35;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  color: #52525c;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   padding: 10px 16px;
   cursor: pointer;
   display: flex;
@@ -22,24 +21,24 @@
   transition: color 0.15s;
 }
 .hist-toggle:hover {
-  color: #00dc50;
+  color: #a1a1aa;
 }
 .hist-count {
-  background: rgba(0, 220, 80, 0.12);
-  border: 1px solid rgba(0, 220, 80, 0.25);
+  background: rgba(129, 140, 248, 0.1);
+  border: 1px solid rgba(129, 140, 248, 0.2);
   border-radius: 10px;
-  color: #00dc50;
+  color: #818cf8;
   font-size: 0.7rem;
   padding: 1px 7px;
 }
 .hist-chevron {
   margin-left: auto;
   font-size: 0.65rem;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .hist-body {
-  border-top: 1px solid #0f2e14;
+  border-top: 1px solid #1e1e22;
   padding: 12px 16px;
   display: flex;
   flex-direction: column;
@@ -49,7 +48,7 @@
 }
 
 .hist-empty {
-  color: #2a5c35;
+  color: #3f3f46;
   font-size: 0.85rem;
   text-align: center;
   padding: 8px 0;
@@ -58,18 +57,17 @@
 .hist-clear {
   align-self: flex-end;
   background: none;
-  border: 1px solid #2e1010;
+  border: 1px solid #2a1a1a;
   border-radius: 4px;
-  color: #7a2a2a;
+  color: #5a2a2a;
   font-size: 0.72rem;
-  letter-spacing: 0.08em;
   padding: 3px 10px;
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
 }
 .hist-clear:hover {
-  color: #cc3333;
-  border-color: #cc3333;
+  color: #f87171;
+  border-color: #f87171;
 }
 
 .hist-list {
@@ -84,7 +82,7 @@
   flex-direction: column;
   gap: 4px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #0a1a0c;
+  border-bottom: 1px solid #1a1a1e;
 }
 .hist-entry:last-child {
   border-bottom: none;
@@ -93,8 +91,8 @@
 
 .hist-date {
   font-size: 0.68rem;
-  color: #2a5c35;
-  letter-spacing: 0.05em;
+  color: #3f3f46;
+  letter-spacing: 0.02em;
 }
 
 .hist-slots {
@@ -108,14 +106,13 @@
   align-items: center;
   gap: 4px;
   font-size: 0.78rem;
-  font-family: 'Georgia', serif;
-  background: rgba(0,0,0,0.3);
-  border-radius: 3px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 4px;
   padding: 2px 7px;
 }
 
 .hist-role {
   font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }

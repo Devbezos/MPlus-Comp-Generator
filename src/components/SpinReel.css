@@ -32,9 +32,9 @@
   height: 0;
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
-  border-top: 26px solid #00dc50;
+  border-top: 26px solid #818cf8;
   z-index: 10;
-  filter: drop-shadow(0 2px 6px rgba(0, 220, 80, 0.7));
+  filter: drop-shadow(0 2px 6px rgba(129, 140, 248, 0.6));
 }
 
 /* The rotating wheel div */
@@ -43,7 +43,7 @@
   height: 420px;
   will-change: transform;
   border-radius: 50%;
-  box-shadow: 0 0 48px rgba(0, 220, 80, 0.18), 0 0 16px rgba(0,0,0,0.9);
+  box-shadow: 0 0 40px rgba(129, 140, 248, 0.12), 0 0 16px rgba(0,0,0,0.9);
 }
 .reel-rot--spin {
   transition: transform 4.5s cubic-bezier(0.04, 0.82, 0.16, 1.0);
