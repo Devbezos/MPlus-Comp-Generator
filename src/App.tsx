@@ -248,8 +248,8 @@ export default function App() {
           const roleDisplay = slot
             ? (slot.role === 'HEALER' ? 'HEAL' : slot.role)
             : EMPTY_LABELS[i];
-          const roleColor = slot ? ROLE_COLORS[slot.role] : '#3a3a5a';
-          const nameColor = slot ? CLASS_COLORS[slot.class] : '#2e2e44';
+          const roleColor = slot ? ROLE_COLORS[slot.role] : '#555';
+          const nameColor = slot ? CLASS_COLORS[slot.class] : '#444';
 
           return (
             <div key={i} className={`slot${isActive ? ' slot--active' : ''}${isPlayer ? ' slot--you' : ''}`}>

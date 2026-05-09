@@ -39,7 +39,7 @@
 .player-label {
   font-size: 0.72rem;
   font-weight: 500;
-  color: #555;
+  color: #999;
   white-space: nowrap;
 }
 .player-select {
@@ -72,17 +72,17 @@
 .cbtn {
   padding: 6px 18px;
   border-radius: 6px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #333;
   background: #111;
-  color: #555;
+  color: #aaa;
   font-size: 0.82rem;
   font-weight: 500;
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
 }
 .cbtn:hover {
-  border-color: #444;
-  color: #888;
+  border-color: #555;
+  color: #ddd;
 }
 .cbtn--require {
   border-color: #22c55e !important;
@@ -147,8 +147,8 @@
 .reroll-btn {
   flex-shrink: 0;
   background: none;
-  border: 1px solid #2a2a2a;
-  color: #444;
+  border: 1px solid #333;
+  color: #777;
   border-radius: 6px;
   width: 28px;
   height: 28px;
@@ -160,8 +160,8 @@
   transition: color 0.15s, border-color 0.15s;
 }
 .reroll-btn:hover {
-  border-color: #555;
-  color: #888;
+  border-color: #666;
+  color: #bbb;
 }
 .reroll-btn:disabled {
   opacity: 0.2;
@@ -224,6 +224,6 @@
 }
 .util--neutral {
   background: #111;
-  border: 1px solid #2a2a2a;
-  color: #555;
+  border: 1px solid #333;
+  color: #888;
 }
