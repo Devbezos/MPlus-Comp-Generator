@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { Spec } from '../data/specs';
 
-const STORAGE_KEY = 'key-vibes-history';
+const STORAGE_KEY = 'mplus-comp-history';
 const MAX_ENTRIES = 50;
 
 export interface HistoryEntry {
