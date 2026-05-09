@@ -1,0 +1,121 @@
+.hist {
+  border: 1px solid #0f2e14;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #060e07;
+}
+
+.hist-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #2a5c35;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.15s;
+}
+.hist-toggle:hover {
+  color: #00dc50;
+}
+.hist-count {
+  background: rgba(0, 220, 80, 0.12);
+  border: 1px solid rgba(0, 220, 80, 0.25);
+  border-radius: 10px;
+  color: #00dc50;
+  font-size: 0.7rem;
+  padding: 1px 7px;
+}
+.hist-chevron {
+  margin-left: auto;
+  font-size: 0.65rem;
+  opacity: 0.6;
+}
+
+.hist-body {
+  border-top: 1px solid #0f2e14;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.hist-empty {
+  color: #2a5c35;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.hist-clear {
+  align-self: flex-end;
+  background: none;
+  border: 1px solid #2e1010;
+  border-radius: 4px;
+  color: #7a2a2a;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.hist-clear:hover {
+  color: #cc3333;
+  border-color: #cc3333;
+}
+
+.hist-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hist-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #0a1a0c;
+}
+.hist-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hist-date {
+  font-size: 0.68rem;
+  color: #2a5c35;
+  letter-spacing: 0.05em;
+}
+
+.hist-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.hist-spec {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-family: 'Georgia', serif;
+  background: rgba(0,0,0,0.3);
+  border-radius: 3px;
+  padding: 2px 7px;
+}
+
+.hist-role {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
