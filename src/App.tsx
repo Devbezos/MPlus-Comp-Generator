@@ -276,11 +276,9 @@ export default function App() {
         <button className="roll-btn" onClick={handleRoll} disabled={!!spin || allDone}>
           {rollLabel}
         </button>
-        {canReset && (
-          <button className="reset-btn" onClick={handleReset} disabled={!!spin}>
-            Reset
-          </button>
-        )}
+        <button className="reset-btn" onClick={handleReset} disabled={!!spin}>
+          Reset
+        </button>
       </div>
 
       {/* Utility footer — only after all slots filled */}
