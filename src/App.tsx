@@ -149,15 +149,14 @@ export default function App() {
     setSpin({ slotIndex, pool, winner });
   };
 
+  const handleReset = () => {
+    const newSlots = makeSlots(playerSpec);
+    setSlots(newSlots);
+    const nextEmpty = newSlots.findIndex(s => s === null);
+    setStep(nextEmpty === -1 ? 5 : nextEmpty);
+  };
+
   const handleRoll = () => {
-    if (allDone) {
-      // Reset: re-apply player spec if set
-      const newSlots = makeSlots(playerSpec);
-      setSlots(newSlots);
-      const nextEmpty = newSlots.findIndex(s => s === null);
-      setStep(nextEmpty === -1 ? 5 : nextEmpty);
-      return;
-    }
     startSpin(step, slots);
   };
 
@@ -185,11 +184,11 @@ export default function App() {
     }, 0);
   };
 
-  const rollLabel = allDone
-    ? 'Reset'
-    : step === 0 ? 'Roll Tank'
+  const rollLabel = step === 0 ? 'Roll Tank'
     : step === 1 ? 'Roll Healer'
     : 'Roll DPS';
+
+  const canReset = slots.some(s => s !== null && !(playerSpec && isSameSpec(s, playerSpec)));
 
   // Utility summary for the footer
   const filled = slots.filter(Boolean) as Spec[];
@@ -274,9 +273,14 @@ export default function App() {
 
       {/* Main action button */}
       <div className="roll-row">
-        <button className="roll-btn" onClick={handleRoll} disabled={!!spin}>
+        <button className="roll-btn" onClick={handleRoll} disabled={!!spin || allDone}>
           {rollLabel}
         </button>
+        {canReset && (
+          <button className="reset-btn" onClick={handleReset} disabled={!!spin}>
+            Reset
+          </button>
+        )}
       </div>
 
       {/* Utility footer — only after all slots filled */}

@@ -22,6 +22,7 @@ export function RunawaySelect({ value, options, onChange, disabled, placeholder 
   const [open, setOpen] = useState(false);
   const [pos, setPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [fleeing, setFleeing] = useState(false);
+  const fleeCountRef = useRef(0);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -32,10 +33,13 @@ export function RunawaySelect({ value, options, onChange, disabled, placeholder 
     const rect = btn.getBoundingClientRect();
     setPos({ x: rect.left, y: rect.bottom + 6 });
     setFleeing(false);
+    fleeCountRef.current = 0;
     setOpen(true);
   };
 
   const flee = useCallback(() => {
+    if (fleeCountRef.current >= 3) return;
+    fleeCountRef.current += 1;
     const maxX = Math.max(8, window.innerWidth - PANEL_W - 16);
     const maxY = Math.max(8, window.innerHeight - PANEL_H - 16);
     setPos({

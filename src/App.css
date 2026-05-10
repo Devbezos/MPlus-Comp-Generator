@@ -151,6 +151,7 @@
 .roll-row {
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 .roll-btn {
   padding: 11px 52px;
@@ -172,6 +173,30 @@
   transform: translateY(0);
 }
 .roll-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.reset-btn {
+  padding: 11px 24px;
+  background: transparent;
+  border: 1px solid #555;
+  border-radius: 8px;
+  color: #aaa;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, transform 0.1s;
+}
+.reset-btn:hover:not(:disabled) {
+  border-color: #ef4444;
+  color: #ef4444;
+  transform: translateY(-1px);
+}
+.reset-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+.reset-btn:disabled {
   opacity: 0.35;
   cursor: not-allowed;
 }
