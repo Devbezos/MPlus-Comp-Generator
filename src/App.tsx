@@ -127,19 +127,42 @@ export default function App() {
 
   const handleSetPlayer = (value: string) => {
     if (!value) {
+      // Clear player spec but keep the rest of the comp; remove any old player slot
       setPlayerSpec(null);
-      setSlots(Array(5).fill(null));
-      setStep(0);
+      setSlots(prev => {
+        const next = prev.map((s, i) => {
+          // If the slot held the old player spec, clear it
+          if (s && playerSpec && isSameSpec(s, playerSpec)) return null;
+          return s;
+        });
+        const nextEmpty = next.findIndex(s => s === null);
+        setStep(nextEmpty === -1 ? 5 : nextEmpty);
+        return next;
+      });
       return;
     }
     const [specName, className] = value.split('|');
     const found = SPECS.find(s => s.spec === specName && s.class === className) ?? null;
     setPlayerSpec(found);
     if (found) {
-      const newSlots = makeSlots(found);
-      setSlots(newSlots);
-      const nextEmpty = newSlots.findIndex(s => s === null);
-      setStep(nextEmpty === -1 ? 5 : nextEmpty);
+      const roleSlots = found.role === 'TANK' ? [0]
+        : found.role === 'HEALER' ? [1]
+        : [2, 3, 4];
+      setSlots(prev => {
+        const next = [...prev];
+        // Remove old player spec from wherever it was
+        if (playerSpec) {
+          const oldIdx = next.findIndex(s => s && isSameSpec(s, playerSpec));
+          if (oldIdx !== -1) next[oldIdx] = null;
+        }
+        // Place in the first empty role slot, or fall back to the last role slot
+        const emptySlot = roleSlots.find(i => next[i] === null);
+        const placeAt = emptySlot !== undefined ? emptySlot : roleSlots[roleSlots.length - 1];
+        next[placeAt] = found;
+        const nextEmpty = next.findIndex(s => s === null);
+        setStep(nextEmpty === -1 ? 5 : nextEmpty);
+        return next;
+      });
     }
   };
 
